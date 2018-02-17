@@ -14,12 +14,12 @@ public class BookCategoryRestServiceController {
 	@Autowired 
 	private BookCategoryRepository bookCategoryRepo;
 	
-	@GetMapping("/bookCategory/all")
+	@GetMapping("/jpaRest/getAllBookCategory")
 	public @ResponseBody Iterable<BookCategory> getAllBookCategorys() {
 		return bookCategoryRepo.findAll();
 	}
 	
-	@GetMapping("/bookCategory/{id}")
+	@GetMapping("/jpaRest/getBookCategoryById/{id}")
 	public BookCategory getBookCategoryById(@PathVariable Integer id) {
 		return bookCategoryRepo.findOne(id);  
 	}

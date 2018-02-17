@@ -14,7 +14,7 @@ public class GreetingRestServiceController {
     private final AtomicLong counter = new AtomicLong();
 
     // mapping request /greeting to service class greeting
-    @RequestMapping("/greeting")
+    @RequestMapping("/jpaRest/greeting")
     public Greeting greeting(@RequestParam(value="rpName", defaultValue="World (the default value)") String personName) {
         return new Greeting(counter.incrementAndGet(), 
         					String.format(messageString, personName), "myEmail");
